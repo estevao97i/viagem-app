@@ -7,6 +7,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.estevao.cliente.Cliente;
+import org.estevao.cliente.ClienteService;
 
 @Path("/reserva-cli")
 public class ReservaResource {
@@ -15,11 +16,16 @@ public class ReservaResource {
     @RestClient
     ReservaService service;
 
+    @Inject
+    @RestClient
+    ClienteService clienteService;
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String newReserva() {
-        Cliente cliente = Cliente.of(1, "");
-        String response = service.newReserva(cliente);
+        Cliente cliente = clienteService.findById(1L);
+        Reserva reserva = Reserva.of(0, cliente);
+        String response = service.newReserva(reserva);
         return response;
     }
 }

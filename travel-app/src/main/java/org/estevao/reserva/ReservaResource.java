@@ -37,6 +37,9 @@ public class ReservaResource {
         reserva.id = null;
         reserva.persist();
 
+        // fazer requisição pelo terminal:
+//                                curl -d '{"id": numero-id}' -H "Content-Type: application/json" http://localhost:8090/reservas
+
         return Response.status(Response.Status.CREATED).entity(reserva).build();
     }
 }

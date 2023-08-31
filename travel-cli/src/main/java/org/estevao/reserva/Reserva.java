@@ -10,6 +10,8 @@ public class Reserva {
         this.cliente = cliente;
     }
 
+    public Reserva() {}
+
     public static Reserva of(long id, Cliente cliente) {
         return new Reserva(id, cliente);
     }
