@@ -4,7 +4,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-@RegisterRestClient(baseUri = "http://localhost:8090/clientes")
+@RegisterRestClient(baseUri = "http://localhost:8092/clientes")
 public interface ClienteService {
 
     @POST

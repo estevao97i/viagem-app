@@ -4,23 +4,23 @@ import org.estevao.cliente.Cliente;
 
 public class Reserva {
 
-    private Cliente cliente;
+    private long idCliente;
 
-    private Reserva(long id, Cliente cliente) {
-        this.cliente = cliente;
+    private Reserva(long id, long idCliente) {
+        this.idCliente = idCliente;
     }
 
     public Reserva() {}
 
-    public static Reserva of(long id, Cliente cliente) {
-        return new Reserva(id, cliente);
+    public static Reserva of(long id, long idCliente) {
+        return new Reserva(id, idCliente);
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public long getIdCliente() {
+        return idCliente;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setIdCliente(long idCliente) {
+        this.idCliente = idCliente;
     }
 }

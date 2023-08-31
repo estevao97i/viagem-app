@@ -9,7 +9,7 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.estevao.cliente.Cliente;
 
-@RegisterRestClient(baseUri = "http://localhost:8090/reservas")
+@RegisterRestClient(baseUri = "http://localhost:8093/reservas")
 public interface ReservaService {
 
     @POST

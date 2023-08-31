@@ -15,7 +15,7 @@ public class ReservaResource {
     }
 
     @GET
-    @Path("find-by-id")
+    @Path("findById")
     @Produces(MediaType.APPLICATION_JSON)
     public Response findById(@QueryParam("id") long id) {
         return Response.ok(Reserva.findById(id)).build();
