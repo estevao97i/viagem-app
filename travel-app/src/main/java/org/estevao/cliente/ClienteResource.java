@@ -1,10 +1,9 @@
-package org.estevao.Cliente;
+package org.estevao.cliente;
 
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-
-import java.util.List;
 
 @Path("/clientes")
 public class ClienteResource {
@@ -23,6 +22,7 @@ public class ClienteResource {
     }
 
     @DELETE
+    @Transactional
     @Path("delete-by-id")
     public Response deleteById(@QueryParam("id") long id) {
         Cliente.deleteById(id);
@@ -31,12 +31,16 @@ public class ClienteResource {
     }
 
     @POST
+    @Transactional
     @Path("create-cliente")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createNewCliente(Cliente cliente) {
         cliente.id = null;
-        Cliente.persist(cliente);
+        cliente.persist();
+
+        // fazer requisição pelo terminal:
+//                                curl -d '{"nome": "agata"}' -H "Content-Type: application/json" http://localhost:8090/clientes
 
         return Response.status(Response.Status.CREATED).entity(cliente).build();
     }
