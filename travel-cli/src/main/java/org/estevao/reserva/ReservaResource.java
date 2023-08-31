@@ -25,7 +25,6 @@ public class ReservaResource {
     public String newReserva() {
         Cliente cliente = clienteService.findById(1L);
         Reserva reserva = Reserva.of(0, cliente);
-        String response = service.newReserva(reserva);
-        return response;
+        return service.newReserva(reserva);
     }
 }
