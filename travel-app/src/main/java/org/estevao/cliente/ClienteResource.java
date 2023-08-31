@@ -32,7 +32,6 @@ public class ClienteResource {
 
     @POST
     @Transactional
-    @Path("create-cliente")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createNewCliente(Cliente cliente) {
