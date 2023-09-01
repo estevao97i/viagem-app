@@ -17,7 +17,8 @@ public class ClienteResource {
     @GET
     @Path("findById")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response findById(@QueryParam("id") long id) {
+    public Response findById(@QueryParam("id") long id) throws InterruptedException {
+//        Thread.sleep(5000);
         return Response.ok(Cliente.findById(id)).build();
     }
 
