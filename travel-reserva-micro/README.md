@@ -77,3 +77,17 @@ Invoke different services through REST with JSON
 Easily start your RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+
+### DEPLOY IN KUBERNETES
+ 
+- colocar configurações no application.properties
+- pesquisar por OpenShit Sandbox
+- depois de criado pegar a chave do sandbox no estevao97i(canto superior direito da tela) - copy login command
+- jogar o comando no terminal para se autenticar e autorizar
+- escrever (kubectl get pods) pra ver se está conectado
+- se não estiver conectado, se conecte pelo docker hub (config -> enable kubernetes)
+- escrever ((kubectl config get-contexts) ou (kubectl get nodes)) para ver se está rodando
+- escrever (mvn clean package -Dquarkus.kubernetes.deploy=true) no terminal pra fazer o .jar e deploy no kubernetes
+- entrar no hub.docker.com
+- escrever (kubectl get pods) pra ver se está rodando os servicos
+- escrever (kubectl get svc) pra ver o EXTERNAL-IP que já pode ser colocado no browser e testado!
