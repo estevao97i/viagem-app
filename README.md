@@ -86,6 +86,7 @@ Easily start your RESTful Web Services
 - depois de criado pegar a chave do sandbox no estevao97i(canto superior direito da tela) - copy login command
 - jogar o comando no terminal para se autenticar e autorizar
 - escrever (kubectl get pods) pra ver se está conectado
+- escrever docker login (colocar username e password)
 - se não estiver conectado, se conecte pelo docker hub (config -> enable kubernetes)
 - escrever ((kubectl config get-contexts) ou (kubectl get nodes)) para ver se está rodando
 - escrever (mvn clean package -Dquarkus.kubernetes.deploy=true) no terminal pra fazer o .jar e deploy no kubernetes
