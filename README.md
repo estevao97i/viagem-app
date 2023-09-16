@@ -82,6 +82,17 @@ Easily start your RESTful Web Services
 ### DEPLOY IN KUBERNETES
  
 - colocar configurações no application.properties
+  - quarkus.container-image.registry=docker.io
+  - quarkus.container-image.group=estevao97i
+  - quarkus.container-image.name=camel-app-pedido
+  - quarkus.container-image.tag=1.0-SNAPSHOT
+  - quarkus.kubernetes.service-type=load-balancer
+  - quarkus.kubernetes-client.trust-certs=true
+  - quarkus.native.container-build=true
+
+- colocar extensoes no quarkus
+  - mvn quarkus:add-extension -Dextensions="quarkus-kubernetes,quarkus-container-image-jib"
+    
 - pesquisar por OpenShit Sandbox
 - depois de criado pegar a chave do sandbox no estevao97i(canto superior direito da tela) - copy login command
 - jogar o comando no terminal para se autenticar e autorizar
